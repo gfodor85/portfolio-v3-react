@@ -1,0 +1,148 @@
+$carousel-width: 700px
+
+.work-wrap
+    position: relative
+    width: $carousel-width
+    height: 400px
+    width: 780px
+    margin: 0 10px
+    display: flex
+
+.seq-canvas
+    height: 100%
+    width: 100%
+    margin: 0
+    padding: 0
+    list-style: none
+    > *
+        height: 100%
+        width: 100%
+        margin: 0
+        padding: 0
+        list-style: none
+
+.seq
+    position: relative
+    width: 100%
+    height: 700px
+    // overflow: hidden
+
+.seq-canvas > *
+    position: absolute
+
+.nav
+    position: absolute
+    z-index: 100
+    right: -45px
+    width: 70px
+    align-self: center
+    border: none
+    margin: 0 auto
+    padding: 0
+    background-color: $primary-color
+    box-shadow: $shadow
+
+.seq-next, .seq-prev
+    background: transparent
+    border: none
+    padding: 20px
+    margin: 0 auto
+    cursor: pointer
+    color: $accent-color
+    font-size: 50px
+    line-height: 1
+    text-transform: uppercase
+    opacity: .8
+    transition-duration: .25s
+    transition-property: opacity
+
+.seq-next:hover, .seq-prev:hover
+    opacity: 1
+
+.slide 
+    position: absolute
+    width: 100%
+    height: 500px
+
+.desktop, .mobile
+    position: absolute
+    filter: drop-shadow(10px 10px 15px rgba(0,0,0,0.6))
+
+.desktop
+    max-width: 700px
+    top: -150px
+
+.mobile
+    max-width: 150px
+    top: 100px
+    left: 150px
+
+.seq
+
+    .seq-in .desktop
+        opacity: 1
+        transform: translate3d(0, 0, 0)
+        transition: all .7s
+
+    .desktop, .seq-out
+        transform: translate3d(0, -100px, 0)
+        opacity: 0
+        transition: all .7s
+
+.seq
+
+    .seq-in .mobile
+        opacity: 1
+        transform: translate3d(0, 0, 0)
+        transition: all .7s
+
+    .mobile, .seq-out
+        transform: translate3d(0, 100px, 0)
+        opacity: 0
+        transition: all .7s
+
+.work-text-wrap
+    position: absolute
+    top: 250px
+    right: 120px
+    // border: 1px solid
+    width: 260px
+    height: 100px
+    text-align: right
+
+    b
+        font-size: 22px
+
+.seq
+
+    .seq-in .work-text-wrap
+        opacity: 1
+        transform: translate3d(0, 0, 0)
+        transition: all .7s
+
+    .work-text-wrap, .seq-out
+        transform: translate3d(0, 0, 0)
+        opacity: 0
+        transition: all .7s
+
+
+.slide__title
+    float: right
+    color: #FFF
+    font-size: 200px
+    line-height: 0.8
+    text-transform: uppercase
+    transform: translate3d(0, -60px, 0)
+    opacity: 0
+    text-align: right
+    margin-right: 60px
+    margin-top: 60px
+    font-weight: 900
+    transition: all .4s
+
+.seq .seq-in .slide__title
+    transform: translate3d(0, 0, 0)
+    opacity: 0.3
+    transition: all .4s
+    transition-delay: .2s
+
