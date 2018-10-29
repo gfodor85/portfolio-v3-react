@@ -8,7 +8,7 @@ import './index.sass';
 class App extends Component {
   render() {
     return (
-      <div className="app">
+      <div className="app" style={{backgroundImage: 'images/background.jpg'}}>
         <Nav/> 
       </div>
     );
