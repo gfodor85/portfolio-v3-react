@@ -10,3 +10,26 @@ body
 code 
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace
 
+// This is the single file output by sass. It is intended to ONLY @import other files.
+
+
+// 1 - TOOLS
+
+// 2 - Base
+@import styles/2-base/base-dir
+
+// 3 - Modules
+@import styles/3-modules/modules-dir
+
+// 4 - Layout
+@import styles/4-layout/layout-dir
+
+// 5 - Components
+@import styles/5-components/buttons
+@import styles/5-components/panel
+
+
+// 6 - Vendors
+@import styles/6-vendors/bourbon/bourbon
+@import styles/6-vendors/normalize
+@import styles/6-vendors/swiper_custom

@@ -1,1 +1,21 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21.925 15.946"><defs><style>.a{fill:#2096b0;}</style></defs><g transform="translate(0 -6)"><g transform="translate(0 6)"><path class="a" d="M21.427,6H.5a.5.5,0,0,0-.5.5V21.447a.5.5,0,0,0,.5.5H21.427a.5.5,0,0,0,.5-.5V6.5A.5.5,0,0,0,21.427,6Zm-.5,13.744-6.173-6.173-.7.7,6.673,6.673H1.2l6.673-6.673-.7-.7L1,19.744V7H20.929Z" transform="translate(0 -6)"/></g><g transform="translate(0.997 6.997)"><path class="a" d="M20.925,8l-8.959,8.959L3.007,8H2v.4l9.614,9.614a.5.5,0,0,0,.7,0L21.932,8.4V8Z" transform="translate(-2 -8)"/></g></g></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 55.83 40.604">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+      }
+    </style>
+  </defs>
+  <g id="contact_icon" transform="translate(0 -6)">
+    <g id="Group_8" data-name="Group 8" transform="translate(0 6)">
+      <g id="Group_7" data-name="Group 7">
+        <path id="Path_32" data-name="Path 32" class="cls-1" d="M54.561,6H1.269A1.268,1.268,0,0,0,0,7.269V45.335A1.268,1.268,0,0,0,1.269,46.6H54.561a1.269,1.269,0,0,0,1.269-1.269V7.269A1.269,1.269,0,0,0,54.561,6ZM53.293,41,37.574,25.279,35.78,27.073,52.772,44.066H3.058L20.051,27.073l-1.794-1.794L2.538,41V8.538H53.293Z" transform="translate(0 -6)"/>
+      </g>
+    </g>
+    <g id="Group_10" data-name="Group 10" transform="translate(2.538 8.538)">
+      <g id="Group_9" data-name="Group 9">
+        <path id="Path_33" data-name="Path 33" class="cls-1" d="M50.19,8,27.377,30.813,4.564,8H2V9.024L26.48,33.5a1.267,1.267,0,0,0,1.794,0l24.48-24.48V8Z" transform="translate(-2 -8)"/>
+      </g>
+    </g>
+  </g>
+</svg>
