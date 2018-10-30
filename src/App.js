@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-
 import Nav from './components/nav';
 import './index.sass';
 // import {CSSTransition} from "react-transition-group";
@@ -8,7 +7,7 @@ import './index.sass';
 class App extends Component {
   render() {
     return (
-      <div className="app" style={{backgroundImage: 'images/background.jpg'}}>
+      <div className="app">
         <Nav/> 
       </div>
     );
