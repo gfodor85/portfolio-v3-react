@@ -1,17 +1,17 @@
 import React, { Component } from 'react';
-import about_icon from '../images/svg/about_icon.svg';
+import About_icon from '../../images/svg/about_icon.svg';
 
 
-class About extends Component {
+export default class Panel_about extends Component {
     render () {
       return (
 
         <div className="panel-container">
           <div className="panel-content">
             <div className="panel-icon">
-                <img src={about_icon} className="panel-svg" alt="about-icon" />
+                <img src={About_icon} className="panel-svg" alt="about-icon" />
             </div>
-            <p className="abaout-text">
+            <p className="about-text">
               Hello,<br />
                 I’m an enthusiastic front-end developer and designer with many years of experience
                 in building and designing clean and fast websites. I am always opened to new ideas
@@ -30,5 +30,3 @@ class About extends Component {
       );
     }
   }
-
-export default About;

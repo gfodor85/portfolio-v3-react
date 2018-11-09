@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import Nav from './components/nav';
-import About from './components/about';
+import Nav from './components/nav/nav';
+import Panels from './components/panels/panels';
 import './App.sass';
 
 // import bg from './images/background.jpg'
@@ -19,7 +19,7 @@ class App extends Component {
     return (
       <div className="app" style ={appStyle}>
         <Nav/>
-        <About/>
+        <Panels/>
       </div>
     );
   }
