@@ -1,13 +1,23 @@
 import React, { Component } from 'react'
-import About_nav from './components/nav/nav-about';
- 
+import NavAbout from './nav/nav';
+import PanelAbout from './panels/panel_about'
 
-export default class Panel_effect extends Component {
-  render() {
-    return (
-      <div>
-        
-      </div>
-    )
-  }
+
+export default class PanelEffect extends Component {
+    state = {
+        on: false,
+    }
+
+    toggle = () => {
+        this.setState({
+            on: !this.state.on
+        });
+    };
+
+    render() {
+        return (
+            {this.state.on && <PanelAbout />}
+            <NavAbout onClick={this.toggle}>
+        );
+    }
 }

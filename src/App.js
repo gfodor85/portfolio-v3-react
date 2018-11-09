@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Nav from './components/nav/nav';
 import Panels from './components/panels/panels';
+import PanelEffect from './components/panel-effect';
 import './App.sass';
 
 // import bg from './images/background.jpg'
