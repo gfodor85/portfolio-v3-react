@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
 import Nav from './components/nav/nav';
-import Panels from './components/panels/panels';
-import PanelEffect from './components/panel-effect';
+import PanelAbout from './components/panels/panel_about';
+import PanelWork from './components/panels/panel_work';
 import './App.sass';
-
-// import bg from './images/background.jpg'
-// import// import {CSSTransition} from "react-transition-group";
+// import Transition from 'react-transition-group/Transition';
+import { BrowserRouter, Route } from 'react-router-dom';
 
 
 class App extends Component {
@@ -19,8 +18,17 @@ class App extends Component {
     
     return (
       <div className="app" style ={appStyle}>
-        <Nav/>
-        <Panels/>
+        <BrowserRouter>
+          <switch>
+            <Route path="/" component={Nav} />
+            <Route path="/about" component={PanelAbout} />
+            <Route path="/work" component={PanelWork} />
+          </switch>
+          
+        </BrowserRouter>
+
+        {/* <Nav/>
+        <PanelAbout/> */}
       </div>
     );
   }

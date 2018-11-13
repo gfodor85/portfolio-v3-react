@@ -1,14 +1,17 @@
-import React, { Component } from 'react'
-import About_icon from '../../images/svg/about_icon.svg';
+import React, { Component } from "react";
+import AboutIcon from "../../images/svg/about_icon.svg";
+// import PanelAbout from "../panels/panel_about";
+import {NavLink} from "react-router-dom";
 
 
 export default class nav_about extends Component {
-    render() {
-        return (
-            <div className="nav-item">
-                <img src={About_icon} className="nav-icon" alt="about-icon" />
-            </div>
-        )
-    }
+  render() {
+    return (
+      <NavLink to="/about">
+        <div className="nav-item">
+          <img src={AboutIcon} className="nav-icon" alt="about-icon" />
+        </div>
+      </NavLink>
+    );
+  }
 }
-
