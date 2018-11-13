@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import AboutIcon from "../../images/svg/about_icon.svg";
-// import PanelAbout from "../panels/panel_about";
 import {NavLink} from "react-router-dom";
 
 
