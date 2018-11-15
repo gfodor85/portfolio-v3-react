@@ -6,7 +6,7 @@ import {NavLink} from "react-router-dom";
 export default class nav_about extends Component {
   render() {
     return (
-      <NavLink to="/about">
+      <NavLink to="/">
         <div className="nav-item">
           <img src={AboutIcon} className="nav-icon" alt="about-icon" />
         </div>

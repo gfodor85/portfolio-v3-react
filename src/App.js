@@ -23,10 +23,11 @@ class App extends Component {
     
     return (
       <div className="app" style ={appStyle}>
+        
         <BrowserRouter>
           <switch>
             <Route path="/" component={Nav} />
-            <Route path="/about" component={PanelAbout} />
+            <Route exact path="/" component={PanelAbout} />
             <Route path="/work" component={PanelWork} />
             <Route path="/skills" component={PanelSkills} />
             <Route path="/contact" component={PanelContact} />
