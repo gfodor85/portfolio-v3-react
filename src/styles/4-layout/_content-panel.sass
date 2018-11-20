@@ -10,6 +10,7 @@
     // padding-right: 30px
 
     .panel-content
+        position: absolute
         // top: 18vh
         max-width: 1000px
         padding: 100px 20px 60px 20px
@@ -84,9 +85,14 @@
     width: auto
     height: 130px
 
-.switch-wrapper
-  position: relative
-  > div
-    position: absolute
+
+.fade-enter
+    opacity: 0
+    z-index: 1
+
+.fade-enter.fade-enter-active
+    opacity: 1
+    transition: opacity 250ms ease-in
+  
 
 
