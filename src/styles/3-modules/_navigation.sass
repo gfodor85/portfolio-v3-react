@@ -1,12 +1,34 @@
 .nav-panel
     position: absolute
-    // left: -10.41vw
+    transform: translateX(-100px)
+    left: -100px
     display: flex
     width: 100px
     height: 100%
     z-index: 1000
     background-color: transparent !important
     box-shadow: none !important
+    animation: nav-slide-in 2s ease-out
+    animation-iteration-count: 1
+    animation-fill-mode: forwards
+    transition: animation
+
+    @keyframes nav-slide-in
+        0%
+            transform: translateX(-100px)
+
+        25%
+            transform: translateX(-75px)
+
+        50%
+            transform: translateX(-50px)
+
+        75%
+            transform: translateX(75px)
+
+        100%
+            transform: translateX(100px)
+
 
     .nav-item-container
         display: flex
@@ -60,3 +82,17 @@
 //     svg
 //         display: block
 //         filter: drop-shadow(5px 5px 10px rgba(0,0,0,0.8))
+
+.navslide-enter
+    transform: translateX(-200px)
+    transition: transform 0.5s ease-in
+
+
+.navslide-enter.navslide-enter-active
+    transform: translateX(0px)
+    transition: transform 0.5s ease-in
+
+
+.navslide-leave.navslide-leave-active
+    transform: translateX(-200px)
+    transition: transform 0.5s ease-in

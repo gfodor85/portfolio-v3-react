@@ -1,7 +1,7 @@
 import React from "react";
 import { Route, Switch } from "react-router-dom";
-import { CSSTransition, TransitionGroup } from "react-transition-group";
-import { AnimatedRoute } from 'react-router-transition';
+// import { CSSTransition, TransitionGroup } from "react-transition-group";
+// import { AnimatedRoute } from 'react-router-transition';
 
 
 import Background from "./images/background.jpg";
