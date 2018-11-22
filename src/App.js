@@ -1,7 +1,6 @@
 import React from "react";
-import { Route, Switch } from "react-router-dom";
-// import { CSSTransition, TransitionGroup } from "react-transition-group";
-// import { AnimatedRoute } from 'react-router-transition';
+import { withRouter, Route, Switch } from "react-router-dom";
+import { CSSTransition, TransitionGroup } from "react-transition-group";
 
 
 import Background from "./images/background.jpg";
@@ -26,20 +25,31 @@ const styles = {
   }
 };
 
-const App = () => {
+const App = ({location}) => {
+  const currentKey = location.pathname.split("/")[1] || "/";
+  const timeout = { enter: 300, exit: 200 };
+
   return (
     <div className="app" style={styles.appbg}>
       
       <Nav />
-        
-      <Switch>
-        <Route exact path="/" component={PanelAbout} />
-        <Route path="/work" component={PanelWork} />
-        <Route path="/skills" component={PanelSkills} />
-        <Route path="/contact" component={PanelContact} />
-      </Switch>
+      <TransitionGroup component="main" className="page-main">
+      <CSSTransition
+          key={currentKey}
+          timeout={timeout}
+          classNames="fade"
+          appear
+        >
+          <Switch location={location}>
+            <Route exact path="/" component={PanelAbout} />
+            <Route path="/work" component={PanelWork} />
+            <Route path="/skills" component={PanelSkills} />
+            <Route path="/contact" component={PanelContact} />
+          </Switch>
+        </CSSTransition>
+      </TransitionGroup>  
     </div>
   );
 };
 
-export default App;
+export default withRouter(App);
