@@ -2,7 +2,6 @@ import React from "react";
 import { withRouter, Route, Switch } from "react-router-dom";
 import { CSSTransition, TransitionGroup } from "react-transition-group";
 
-
 import Background from "./images/background.jpg";
 
 import Nav from "./components/nav/nav";
@@ -12,6 +11,7 @@ import PanelSkills from "./components/panels/panel_skills";
 import PanelContact from "./components/panels/panel_contact";
 
 import "./App.sass";
+
 
 const styles = {
   appbg: {

@@ -1,9 +1,13 @@
 import React, { Component } from "react";
 import WorkIcon from "../../images/svg/work_icon.svg";
-import Slider from "react-animated-slider";
-
 import { library } from '@fortawesome/fontawesome-svg-core';
+import { faEnvelope, faKey } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
+
+// import Slider from "react-animated-slider";
+
+library.add(faEnvelope, faKey);
 
 
 const PanelWork = () => {
@@ -14,59 +18,18 @@ const PanelWork = () => {
           <img src={WorkIcon} className="panel-svg" alt="about-icon" />
         </div>
         <div className="work-wrap">
-          <div
-            className="nav"
-            aria-label="Slider buttons"
-            aria-controls="sequence"
-          >
-            <i
-              className="fas fa-chevron-left fa-lg seq-prev"
-              aria-label="Previous"
-              aria-hidden="true"
-            />
-            <i className="fas fa-chevron-right fa-lg seq-next">
-              <FontAwesomeIcon icon="chevron-right" color=""/>
-            </i>
-
+          <div class="nav" aria-label="Slider buttons" aria-controls="sequence">
+          
+              <i class="fas fa-chevron-left fa-lg seq-prev" aria-label="Previous" aria-hidden="true"></i>
+              <i class="fas fa-chevron-right fa-lg seq-next" aria-label="Next" aria-hidden="true"></i>
           </div>
-          <div id="sequence" className="seq">
-            <ul className="seq-canvas">
-              <li className="slide">
-                <img
-                  className="desktop"
-                  src="assets/img/azulite_desktop_mockup.png"
-                />
-                <img
-                  className="mobile"
-                  src="assets/img/azulite_mobile_mockup.png"
-                />
-                <p className="work-text-wrap">
-                  <b>Azulite</b>
-                  <br />A simple and minimal landing page template
-                </p>
-              </li>
-              <li className="slide">
-                <img
-                  className="work-img desktop"
-                  src="assets/img/barbero_desktop_mockup.png"
-                />
-                <img
-                  className="work-img mobile"
-                  src="assets/img/barbero_mobile_mockup.png"
-                />
-                <p className="work-text-wrap">
-                  <b>Barbero</b>
-                  <br />A simple and minimal landing page template
-                </p>
-              </li>
-            </ul>
-          </div>
-        </div>
+          <FontAwesomeIcon icon="envelope" />
         <div className="title-container">
           <div className="title-text">Recent Works</div>
         </div>
       </div>
     </div>
+  </div>
   );
 };
 
