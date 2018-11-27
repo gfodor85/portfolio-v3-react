@@ -11,6 +11,7 @@ import WorkContent from "./works_data"
 library.add(faAngleLeft, faAngleRight);
 
 class PanelWork extends Component {
+  
 
   render() {
     return (
@@ -21,45 +22,23 @@ class PanelWork extends Component {
           </div>
           <div className="work-wrap">
 
-            <Slider
-              className="slider-wrapper"
-            >
-              {WorkContent.map((item, index) => (
-                <div
-                  key={index}
-                  className="slider-content"
-                  style={{
-                    background: `url('${item.image}') no-repeat center center`
-                  }}
-                >
-                  <div className="inner">
-                    <h1>{item.title}</h1>
-                    <p>{item.description}</p>
-                    <button>{item.button}</button>
-                  </div>
-                  
-                  <section>
-                    <img src={item.userProfile} alt={item.user} />
-                    <span>
-                      Posted by <strong>{item.user}</strong>
-                    </span>
-                  </section>
-                </div>
-              ))}
-            </Slider>
+            
             <div className="work-nav-wrap">
-              <a className="previousButton">
+              <a onClick={() => this.sliderRef.previous()}>
                 <FontAwesomeIcon
-                  className="work-nav-button nextButton"
+                  className="work-nav-button"
                   icon="angle-left"
                   size="2x"
                 />
               </a>
-              <FontAwesomeIcon
+              <a onClick={() => this.sliderRef.next()}>
+                <FontAwesomeIcon
                 className="work-nav-button"
                 icon="angle-right"
                 size="2x"
               />
+              </a>
+              
             </div>
           </div>
           <div className="title-container">
