@@ -11,9 +11,32 @@ import WorkContent from "./works_data"
 library.add(faAngleLeft, faAngleRight);
 
 class PanelWork extends Component {
-  
+
+  constructor(props){
+    super(props);
+    this.state = {
+      works: WorkContent.works,
+      work: WorkContent.works[0]
+    }
+  }
+
+  nextWork = () => {
+    const newIndex = this.state.work.index+1;
+    this.setState({
+      work: WorkContent.works[newIndex]
+    })
+  }
+
+  prevWork = () => {
+    const newIndex = this.state.work.index-1;
+    this.setState({
+      work: WorkContent.works[newIndex]
+    })
+  }
 
   render() {
+    const {work} = this.state;
+
     return (
       <div className="panel-container">
         <div className="panel-content">
@@ -22,24 +45,28 @@ class PanelWork extends Component {
           </div>
           <div className="work-wrap">
 
-            
             <div className="work-nav-wrap">
-              <a onClick={() => this.sliderRef.previous()}>
+              <a 
+                onClick={() => this.nextWork()} 
+                disabled={work.index === WorkContent.works.length-1}>
                 <FontAwesomeIcon
                   className="work-nav-button"
                   icon="angle-left"
                   size="2x"
                 />
               </a>
-              <a onClick={() => this.sliderRef.next()}>
+
+              <a 
+                onClick={() => this.prevWork()} 
+                disabled={work.index === 0}>
                 <FontAwesomeIcon
-                className="work-nav-button"
-                icon="angle-right"
-                size="2x"
-              />
+                  className="work-nav-button"
+                  icon="angle-right"
+                  size="2x"
+                />
               </a>
-              
             </div>
+
           </div>
           <div className="title-container">
             <div className="title-text">Recent Works</div>
