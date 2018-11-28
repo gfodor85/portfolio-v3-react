@@ -60,7 +60,9 @@ class PanelWork extends Component {
 
             <div className="work-nav-wrap">
               <a 
-                onClick={() => this.nextWork()}>
+                onClick={() => this.nextWork()}
+                disabled={WorksData.index === 0}  
+              >
                 <FontAwesomeIcon
                   className="work-nav-button"
                   icon="angle-right"
