@@ -10,22 +10,22 @@ import WorksData from "./works_data";
 
 library.add(faAngleLeft, faAngleRight);
 
-const worksdata = [
-      {
-          index: "0",
-          title: "Azulite",
-          description: "A simple and minimal landing page template 1",
-          imageDesktop: require("../../images/azulite_desktop_mockup.png"),
-          imageMobile: "../../images/azulite_mobile_mockup.png"
-        },
-        {
-          index: "1",
-          title: "Barbero",
-          description: "A simple and minimal landing page template 2",
-          imageDesktop: "../../images/barbero_desktop_mockup.png",
-          imagePhone: "../../images/barbero_mobile_mockup.png"
-        }
-  ];
+// const worksdata = [
+//       {
+//           index: "0",
+//           title: "Azulite",
+//           description: "A simple and minimal landing page template 1",
+//           imageDesktop: require("../../images/azulite_desktop_mockup.png"),
+//           imageMobile: "../../images/azulite_mobile_mockup.png"
+//         },
+//         {
+//           index: "1",
+//           title: "Barbero",
+//           description: "A simple and minimal landing page template 2",
+//           imageDesktop: "../../images/barbero_desktop_mockup.png",
+//           imagePhone: "../../images/barbero_mobile_mockup.png"
+//         }
+//   ];
 
 
 class PanelWork extends Component {
@@ -38,15 +38,15 @@ class PanelWork extends Component {
   }
 
   nextWork = () => {
-    this.setState({ index: ( this.state.index + 1) % worksdata.length });
+    this.setState({ index: ( this.state.index + 1) % WorksData.length });
   };
 
   prevWork = () => {
-    this.setState({ index: ( this.state.index - 1) % worksdata.length });
+    this.setState({ index: ( this.state.index === 0) % WorksData.length });
   };
 
   render() {
-    const item = worksdata[this.state.index];
+    const item = WorksData[this.state.index];
 
     return (
       <div className="panel-container">
@@ -57,14 +57,13 @@ class PanelWork extends Component {
           <div className="work-wrap">
 
             <h2>{item.description}</h2>
-            
 
             <div className="work-nav-wrap">
               <a 
                 onClick={() => this.nextWork()}>
                 <FontAwesomeIcon
                   className="work-nav-button"
-                  icon="angle-left"
+                  icon="angle-right"
                   size="2x"
                 />
               </a>
@@ -73,7 +72,7 @@ class PanelWork extends Component {
                 onClick={() => this.prevWork()}>
                 <FontAwesomeIcon
                   className="work-nav-button"
-                  icon="angle-right"
+                  icon="angle-left"
                   size="2x"
                 />
               </a>
