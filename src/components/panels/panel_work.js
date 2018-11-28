@@ -5,37 +5,48 @@ import { faAngleLeft, faAngleRight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "react-animated-slider/build/horizontal.css";
 
-import Slider from "react-animated-slider";
-import WorkContent from "./works_data"
+import WorkSlider from "./work_slider";
+import WorksData from "./works_data";
 
 library.add(faAngleLeft, faAngleRight);
+
+const worksdata = [
+      {
+          index: "0",
+          title: "Azulite",
+          description: "A simple and minimal landing page template 1",
+          imageDesktop: require("../../images/azulite_desktop_mockup.png"),
+          imageMobile: "../../images/azulite_mobile_mockup.png"
+        },
+        {
+          index: "1",
+          title: "Barbero",
+          description: "A simple and minimal landing page template 2",
+          imageDesktop: "../../images/barbero_desktop_mockup.png",
+          imagePhone: "../../images/barbero_mobile_mockup.png"
+        }
+  ];
+
 
 class PanelWork extends Component {
 
   constructor(props){
     super(props);
     this.state = {
-      works: WorkContent.works,
-      work: WorkContent.works[0]
-    }
+      index: 0
+    };
   }
 
   nextWork = () => {
-    const newIndex = this.state.work.index+1;
-    this.setState({
-      work: WorkContent.works[newIndex]
-    })
-  }
+    this.setState({ index: ( this.state.index + 1) % worksdata.length });
+  };
 
   prevWork = () => {
-    const newIndex = this.state.work.index-1;
-    this.setState({
-      work: WorkContent.works[newIndex]
-    })
-  }
+    this.setState({ index: ( this.state.index - 1) % worksdata.length });
+  };
 
   render() {
-    const {work} = this.state;
+    const item = worksdata[this.state.index];
 
     return (
       <div className="panel-container">
@@ -45,10 +56,12 @@ class PanelWork extends Component {
           </div>
           <div className="work-wrap">
 
+            <h2>{item.description}</h2>
+            
+
             <div className="work-nav-wrap">
               <a 
-                onClick={() => this.nextWork()} 
-                disabled={work.index === WorkContent.works.length-1}>
+                onClick={() => this.nextWork()}>
                 <FontAwesomeIcon
                   className="work-nav-button"
                   icon="angle-left"
@@ -57,8 +70,7 @@ class PanelWork extends Component {
               </a>
 
               <a 
-                onClick={() => this.prevWork()} 
-                disabled={work.index === 0}>
+                onClick={() => this.prevWork()}>
                 <FontAwesomeIcon
                   className="work-nav-button"
                   icon="angle-right"
