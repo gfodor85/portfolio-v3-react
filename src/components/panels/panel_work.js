@@ -3,64 +3,72 @@ import WorkIcon from "../../images/svg/work_icon.svg";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { faAngleLeft, faAngleRight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import "react-animated-slider/build/horizontal.css";
+import { CSSTransition, TransitionGroup } from "react-transition-group";
 
 import WorkSlider from "./work_slider";
 import WorksData from "./works_data";
 
 library.add(faAngleLeft, faAngleRight);
 
-// const worksdata = [
-//       {
-//           index: "0",
-//           title: "Azulite",
-//           description: "A simple and minimal landing page template 1",
-//           imageDesktop: require("../../images/azulite_desktop_mockup.png"),
-//           imageMobile: "../../images/azulite_mobile_mockup.png"
-//         },
-//         {
-//           index: "1",
-//           title: "Barbero",
-//           description: "A simple and minimal landing page template 2",
-//           imageDesktop: "../../images/barbero_desktop_mockup.png",
-//           imagePhone: "../../images/barbero_mobile_mockup.png"
-//         }
-//   ];
-
 
 class PanelWork extends Component {
 
   constructor(props){
     super(props);
+
     this.state = {
-      index: 0
+      currentIndex: 0
     };
+
+    this.nextSlide = this.nextSlide.bind(this);
+		this.previousSlide = this.previousSlide.bind(this);
+
   }
 
-  nextWork = () => {
-    this.setState({ index: ( this.state.index + 1) % WorksData.length });
-  };
+  previousSlide () {
+		const lastIndex = WorksData.length - 1;
+		const { currentIndex } = this.state;
+		const shouldResetIndex = currentIndex === 0;
+		const index =  shouldResetIndex ? lastIndex : currentIndex - 1;
+		
+		this.setState({
+			currentIndex: index
+		});
+	}
+	
+	nextSlide () {
+		const lastIndex = WorksData.length - 1;
+		const { currentIndex } = this.state;
+		const shouldResetIndex = currentIndex === lastIndex;
+		const index =  shouldResetIndex ? 0 : currentIndex + 1;
 
-  prevWork = () => {
-    this.setState({ index: ( this.state.index === 0) % WorksData.length });
-  };
+		this.setState({
+			currentIndex: index
+		});
+	}
+  
+  
 
   render() {
-    const item = WorksData[this.state.index];
-
+    const item = WorksData[this.state.currentIndex];
+    
     return (
       <div className="panel-container">
         <div className="panel-content">
           <div className="panel-icon">
             <img src={WorkIcon} className="panel-svg" alt="about-icon" />
           </div>
+          
           <div className="work-wrap">
-
-            <h2>{item.description}</h2>
-
+            <div className="slide-wrap">
+                <p className="work-text-wrap"><b>{item.title}</b><br/>{item.description}</p>
+                <img className="work-img desktop" src={item.imageDesktop} />
+                <img className="work-img mobile" src={item.imageMobile} />
+            </div>     
+            
             <div className="work-nav-wrap">
               <a 
-                onClick={() => this.nextWork()}
+                onClick={this.nextSlide}
                 disabled={WorksData.index === 0}  
               >
                 <FontAwesomeIcon
@@ -71,7 +79,7 @@ class PanelWork extends Component {
               </a>
 
               <a 
-                onClick={() => this.prevWork()}>
+                onClick={this.previousSlide}>
                 <FontAwesomeIcon
                   className="work-nav-button"
                   icon="angle-left"
