@@ -3,9 +3,8 @@ import WorkIcon from "../../images/svg/work_icon.svg";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { faAngleLeft, faAngleRight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { CSSTransition, TransitionGroup } from "react-transition-group";
+// import { CSSTransition, TransitionGroup } from "react-transition-group";
 
-import WorkSlider from "./work_slider";
 import WorksData from "./works_data";
 
 library.add(faAngleLeft, faAngleRight);
@@ -62,12 +61,12 @@ class PanelWork extends Component {
           <div className="work-wrap">
             <div className="slide-wrap">
                 <p className="work-text-wrap"><b>{item.title}</b><br/>{item.description}</p>
-                <img className="work-img desktop" src={item.imageDesktop} />
-                <img className="work-img mobile" src={item.imageMobile} />
+                <img className="work-img desktop" src={item.imageDesktop} alt="desktop" />
+                <img className="work-img mobile" src={item.imageMobile} alt="mobile"/>
             </div>     
             
             <div className="work-nav-wrap">
-              <a 
+              <button 
                 onClick={this.nextSlide}
                 disabled={WorksData.index === 0}  
               >
@@ -76,16 +75,16 @@ class PanelWork extends Component {
                   icon="angle-right"
                   size="2x"
                 />
-              </a>
+              </button>
 
-              <a 
+              <button 
                 onClick={this.previousSlide}>
                 <FontAwesomeIcon
                   className="work-nav-button"
                   icon="angle-left"
                   size="2x"
                 />
-              </a>
+              </button>
             </div>
 
           </div>
