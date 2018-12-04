@@ -3,7 +3,7 @@ import WorkIcon from "../../images/svg/work_icon.svg";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { faAngleLeft, faAngleRight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-// import { CSSTransition, TransitionGroup } from "react-transition-group";
+import { CSSTransition, TransitionGroup } from "react-transition-group";
 
 import WorksData from "./works_data";
 
@@ -60,6 +60,7 @@ class PanelWork extends Component {
           
           <div className="work-wrap">
             <div className="slide-wrap">
+
                 <p className="work-text-wrap"><b>{item.title}</b><br/>{item.description}</p>
                 <img className="work-img desktop" src={item.imageDesktop} alt="desktop" />
                 <img className="work-img mobile" src={item.imageMobile} alt="mobile"/>

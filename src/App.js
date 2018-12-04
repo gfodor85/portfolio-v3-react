@@ -38,7 +38,6 @@ const App = ({location}) => {
           key={currentKey}
           timeout={timeout}
           classNames="fade"
-          appear
         >
           <Switch location={location}>
             <Route exact path="/" component={PanelAbout} />

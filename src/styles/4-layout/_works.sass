@@ -28,16 +28,17 @@ $carousel-width: 700px
     right: -50px
     height: 85px
     box-shadow: $shadow
-    cursor: pointer
 
-    .work-nav-button
-        width: 70px
+    button
+        width: 50px
         border: none
         margin: 0 auto
         padding: 0
         background-color: $primary-color
         color: #24AAC5
-        padding: 7px 0
+        padding: 8px 0
+        cursor: pointer
+        outline: none
 
 .slide-wrap
     position: absolute
@@ -60,29 +61,29 @@ $carousel-width: 700px
 
 /* appear - on page load
 
-.fade-appear
+.work-fade-appear
   opacity: 0
   z-index: 1
-  &.fade-appear-active
+  &.work-fade-appear-active
     opacity: 1
     transition: opacity 1000ms linear
 
 /* enter
 
-.fade-enter
+.work-fade-enter
   opacity: 0
   z-index: 1
-  &.fade-enter-active
+  &.work-fade-enter-active
     opacity: 1
     transition: opacity 5000ms linear 5000ms
 
 /* exit
 
-.fade-exit
+.work-fade-exit
   opacity: 1
-  &.fade-exit-active
+  &.work-fade-exit-active
     opacity: 0
     transition: opacity 5000ms linear
 
-.fade-exit-done
+.work-fade-exit-done
   opacity: 0
