@@ -59,12 +59,34 @@ class PanelWork extends Component {
           </div>
           
           <div className="work-wrap">
-            <div className="slide-wrap">
-
+            <TransitionGroup  className="slide-wrap">
+            
+              <CSSTransition
+                transitionAppear={true}
+                timeout={500}
+                // classNames="workFade"
+                classNames={{
+                  appear: 'workFade-appear',
+                  appearActive: 'workFade-appear-active',
+                  enter: 'workFade-enter',
+                  enterActive: 'workFade-enter-active',
+                  exit: 'workFade-exit',
+                  exitActive: 'workFade-exit-active',
+                  enterDone: 'workFade-exit-done'}}
+                >
                 <p className="work-text-wrap"><b>{item.title}</b><br/>{item.description}</p>
+              </CSSTransition>
+
+              <CSSTransition timeout={500} classNames="work-fade" >
                 <img className="work-img desktop" src={item.imageDesktop} alt="desktop" />
+              </CSSTransition>
+
+              <CSSTransition timeout={500} classNames="work-fade" in={true} >
                 <img className="work-img mobile" src={item.imageMobile} alt="mobile"/>
-            </div>     
+              </CSSTransition>
+
+                
+            </TransitionGroup >     
             
             <div className="work-nav-wrap">
               <button 
